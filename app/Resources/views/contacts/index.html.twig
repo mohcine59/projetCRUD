@@ -4,7 +4,7 @@
         <h1 align="center">Liste de contacts</h1>
 
     <div style="margin-left: 100px;">
-        <a href="http://localhost/projetCRUD/web/app_dev.php/logout">
+        <a href="{{ path('fos_user_security_logout')}}">
             <button type="button" class="btn btn-primary">Se déconnecter</button>
         </a>
         <a href="{{ path('contacts_new') }}">
