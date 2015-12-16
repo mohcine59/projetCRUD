@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+        <h1 align="center">Liste de contacts</h1>
+
+    <div style="margin-left: 100px;">
+        <a href="http://localhost/projetCRUD/web/app_dev.php/logout">
+            <button type="button" class="btn btn-primary">Se déconnecter</button>
+        </a>
+        <a href="{{ path('contacts_new') }}">
+            <button type="button" class="btn btn-primary">Ajouter un contact</button>
+        </a>
+    </div>
+
+    <br><br>
+    <div>
+        <table class="table-striped container" style="width: 80%;">
+            <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th>Prenom</th>
+                    <th>Adresse</th>
+                    <th>Societe</th>
+                    <th>Tel</th>
+                    <th>Email</th>
+                    <th>Site</th>
+                    <th>Profil</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for contact in contacts %}
+                <tr>
+                    <td>{{ contact.nom }}</td>
+                    <td>{{ contact.prenom }}</td>
+                    <td>{{ contact.adresse }}</td>
+                    <td>{{ contact.societe }}</td>
+                    <td>{{ contact.tel }}</td>
+                    <td>{{ contact.email }}</td>
+                    <td>{{ contact.site }}</td>
+                    <td>{{ contact.profil }}</td>
+                    <td>
+                            <a href="{{ path('contacts_show', { 'id': contact.id }) }}">Afficher</a>
+                        <br>
+                            <a href="{{ path('contacts_edit', { 'id': contact.id }) }}">Modifier</a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+{% endblock %}

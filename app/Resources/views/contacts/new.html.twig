@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1 style="margin-left: 80px;">Créer un contact</h1>
+    <p style="margin-left: 100px;">
+        <a href="{{ path('contacts_index') }}">
+            <button type="button" class="btn btn-default">Back to the list</button>
+        </a>
+    </p>
+
+    <div style="margin-left: 300px;">
+        {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <input type="submit" value="Create" />
+        {{ form_end(form) }}
+    </div>
+
+
+
+
+
+{% endblock %}

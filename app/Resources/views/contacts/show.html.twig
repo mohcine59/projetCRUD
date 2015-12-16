@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1 style="margin-left: 80px;">Contact</h1>
+    <p style="margin-left: 100px;">
+        <a href="{{ path('contacts_index') }}">
+            <button type="button" class="btn btn-default">Back to the list</button>
+        </a>
+        <a href="{{ path('contacts_edit', { 'id': contact.id }) }}">
+            <button type="button" class="btn btn-default">Edit</button>
+        </a>
+    </p>
+    <table class="table" style="width: 40%;" align="center">
+        <tbody>
+            <tr>
+                <th>Nom</th>
+                <td>{{ contact.nom }}</td>
+            </tr>
+            <tr>
+                <th>Prenom</th>
+                <td>{{ contact.prenom }}</td>
+            </tr>
+            <tr>
+                <th>Adresse</th>
+                <td>{{ contact.adresse }}</td>
+            </tr>
+            <tr>
+                <th>Societe</th>
+                <td>{{ contact.societe }}</td>
+            </tr>
+            <tr>
+                <th>Tel</th>
+                <td>{{ contact.tel }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ contact.email }}</td>
+            </tr>
+            <tr>
+                <th>Site</th>
+                <td>{{ contact.site }}</td>
+            </tr>
+            <tr>
+                <th>Profil</th>
+                <td>{{ contact.profil }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    {{ form_start(delete_form) }}
+        <input type="submit" value="Delete" style="margin-left:60%;" class="btn btn-danger">
+    {{ form_end(delete_form) }}
+{% endblock %}
